@@ -2,30 +2,14 @@
 // #define USE_DISPLAY
 
 // Represents a decoded IR command as either a 32-bit word or per command field
-class IrCommand {
-  public:
-
-    union {
-      uint32_t fullword = 0;
-      struct {
-        uint8_t address: 8;
-        uint8_t address_inv: 8;
-        uint8_t command: 8;
-        uint8_t command_inv: 8;
-      };
-    } cword;
-
-    IrCommand(unsigned long int cmdword) {
-      cword.fullword = cmdword;
+union IrCommand {
+    uint32_t fullword = 0;
+    struct {
+      uint8_t address: 8;
+      uint8_t address_inv: 8;
+      uint8_t command: 8;
+      uint8_t command_inv: 8;
     };
-
-    inline bool command_valid() {
-      return cword.command == ~cword.command_inv;
-    }
-    
-    inline bool address_valid() {
-      return cword.address == ~cword.address_inv;
-    }
 };
 
 
@@ -60,14 +44,14 @@ void printIrCommand(IrCommand cmd) {
   screen.clearDisplay();
   screen.setCursor(0, 0);
   screen.setTextSize(2);
-  screen.print(cmd.cword.command);
+  screen.print(cmd.command);
   screen.print("/");
-  screen.println(cmd.cword.address);
+  screen.println(cmd.address);
   screen.setTextSize(1);
-  screen.println(renderByte(cmd.cword.address));
-  screen.println(renderByte(cmd.cword.address_inv));
-  screen.println(renderByte(cmd.cword.command));
-  screen.println(renderByte(cmd.cword.command_inv));
+  screen.println(renderByte(cmd.address));
+  screen.println(renderByte(cmd.address_inv));
+  screen.println(renderByte(cmd.command));
+  screen.println(renderByte(cmd.command_inv));
   screen.display();
 }
 #else
@@ -108,9 +92,9 @@ const uint8_t irSwitchCmd = 64;
 const uint8_t irSelectOneCmd = 25;
 const uint8_t irSelectTwoCmd = 24;
 
-const uint8_t pinIrIn = 12;
-const uint8_t pinSignalIn = 6;
-const uint8_t pinOut = 8;
+const uint8_t pinIrIn = 12;     // From VS1838b
+const uint8_t pinSignalIn = 6;  // From 12V trigger output of audio source
+const uint8_t pinOut = 8;       // Driving 12V trigger output circuit
 
 #define USE_SIGNAL 0
 #define USE_IR     1
@@ -150,50 +134,59 @@ void setup() {
 IrCommand decode_command() {
   displayDebug("decoding");
 
+  IrCommand c;
+
   if (curTransition == 0)
-    return 0;
+    return c;
 
+  // Every valid command transmission begins with a preamble of 9ms HIGH...
   if (transitions[1] < 8900 || transitions[1] > 9500) {
-    return 0;
+    return c;
   }
 
+  // ...followed by a 4.5ms LOW
   if (transitions[2] < 4200 || transitions[2] > 4600) {
-    return 0;
+    return c;
   }
 
-  IrCommand c(0);
   uint32_t v;
 
+  // Each bit is two segments; an initial 562.5 us HIGH, and then a
+  // 562.5 us LOW for 0 and a 1.6875 us LOW for 1. In other words, a 
+  // 0 is 1.125 ms total and 1 is 2.25 ms total. So use 1300 us as a
+  // discriminator to account for a little bit banging slop.
   for (int tno = 3; tno < 67; tno += 2) {
     if (((tno - 3) / 2) % 8 == 0)
       SERIALPRINTLN();
 
     v = (transitions[tno] + transitions[tno + 1]) < 1300 ? 0 : 1;
-    c.cword.fullword |= v << ((tno - 3) / 2);
+    c.fullword |= v << ((tno - 3) / 2);
 
     SERIALPRINT(v);
   }
 
   SERIALPRINTLN("\n");
-  printByte("address    ", c.cword.address);
-  printByte("address_inv", c.cword.address_inv);
-  printByte("command    ", c.cword.command);
-  printByte("command_inv", c.cword.command_inv);
+  printByte("address    ", c.address);
+  printByte("address_inv", c.address_inv);
+  printByte("command    ", c.command);
+  printByte("command_inv", c.command_inv);
 
   return c;
 }
 
 // If the command is recognized and intended for this device,
-// apply the intended state changes
+// apply the requested state changes
 void handle_command(IrCommand cmd) {
-  if (cmd.cword.address != irDevAddr)
+  if (cmd.address != irDevAddr)
+    // Not a command for this device
     return;
     
-  if (cmd.cword.command == irSwitchCmd)
+  if (cmd.command == irSwitchCmd)
+    // Toggle between control by input signal or IR command
     state.switchState = !state.switchState;
 
   else if (state.switchState == USE_IR)
-    switch (cmd.cword.command) {
+    switch (cmd.command) {
       case irSelectOneCmd:
         state.outputState = LOW;
         break;
@@ -231,7 +224,6 @@ void loop() {
   }
 
   state.lastReading = new_reading;
-
 
   // If the input trigger is driving the output, set output state to match it
   if (state.switchState == USE_SIGNAL)
