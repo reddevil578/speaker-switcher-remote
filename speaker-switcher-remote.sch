@@ -1,0 +1,367 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L arduino:arduino-nano M1
+U 1 1 60062F98
+P 4200 2850
+F 0 "M1" H 4200 3975 50  0000 C CNN
+F 1 "arduino-nano" H 4200 3884 50  0000 C CNN
+F 2 "arduino-nano:arduino-nano" H 4300 3800 50  0001 C CNN
+F 3 "" H 4300 3800 50  0001 C CNN
+	1    4200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 60065658
+P 5800 2100
+F 0 "R2" V 5593 2100 50  0000 C CNN
+F 1 "2.2k" V 5684 2100 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5730 2100 50  0001 C CNN
+F 3 "~" H 5800 2100 50  0001 C CNN
+	1    5800 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4950 3150 4650 3150
+Wire Wire Line
+	5650 2100 5300 2100
+$Comp
+L Device:Q_NPN_BCE Q2
+U 1 1 6006D052
+P 6300 2100
+F 0 "Q2" H 6491 2146 50  0000 L CNN
+F 1 "TIP31C" H 6491 2055 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 6500 2200 50  0001 C CNN
+F 3 "~" H 6300 2100 50  0001 C CNN
+	1    6300 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 2100 6000 2100
+$Comp
+L Device:R R3
+U 1 1 6006F615
+P 6000 2250
+F 0 "R3" H 6070 2296 50  0000 L CNN
+F 1 "10k" H 6070 2205 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5930 2250 50  0001 C CNN
+F 3 "~" H 6000 2250 50  0001 C CNN
+	1    6000 2250
+	1    0    0    -1  
+$EndComp
+Connection ~ 6000 2100
+Wire Wire Line
+	6000 2100 6100 2100
+$Comp
+L power:GNDREF #PWR0101
+U 1 1 6006FF68
+P 6000 2400
+F 0 "#PWR0101" H 6000 2150 50  0001 C CNN
+F 1 "GNDREF" H 6005 2227 50  0000 C CNN
+F 2 "" H 6000 2400 50  0001 C CNN
+F 3 "" H 6000 2400 50  0001 C CNN
+	1    6000 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR0102
+U 1 1 60071496
+P 4950 3150
+F 0 "#PWR0102" H 4950 2900 50  0001 C CNN
+F 1 "GNDREF" H 4955 2977 50  0000 C CNN
+F 2 "" H 4950 3150 50  0001 C CNN
+F 3 "" H 4950 3150 50  0001 C CNN
+	1    4950 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR0103
+U 1 1 60072476
+P 6400 2300
+F 0 "#PWR0103" H 6400 2050 50  0001 C CNN
+F 1 "GNDREF" H 6405 2127 50  0000 C CNN
+F 2 "" H 6400 2300 50  0001 C CNN
+F 3 "" H 6400 2300 50  0001 C CNN
+	1    6400 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR0104
+U 1 1 60079AD3
+P 5750 2600
+F 0 "#PWR0104" H 5750 2350 50  0001 C CNN
+F 1 "GNDREF" H 5755 2427 50  0000 C CNN
+F 2 "" H 5750 2600 50  0001 C CNN
+F 3 "" H 5750 2600 50  0001 C CNN
+	1    5750 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L arduino:VS1838b IR1
+U 1 1 6007FDE7
+P 4250 1050
+F 0 "IR1" H 4250 1365 50  0000 C CNN
+F 1 "VS1838b" H 4250 1274 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4250 1150 50  0001 C CNN
+F 3 "" H 4250 1150 50  0001 C CNN
+	1    4250 1050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR0105
+U 1 1 60085B7D
+P 4250 1350
+F 0 "#PWR0105" H 4250 1100 50  0001 C CNN
+F 1 "GNDREF" H 4255 1177 50  0000 C CNN
+F 2 "" H 4250 1350 50  0001 C CNN
+F 3 "" H 4250 1350 50  0001 C CNN
+	1    4250 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 2050 3650 2050
+Wire Wire Line
+	4650 1950 4850 1950
+Wire Wire Line
+	3950 1000 3650 1100
+Wire Wire Line
+	3650 1100 3650 2050
+Wire Wire Line
+	4550 1000 4850 1100
+Wire Wire Line
+	4850 1100 4850 1950
+$Comp
+L Device:Q_NPN_BCE Q1
+U 1 1 60099AE6
+P 3650 4200
+F 0 "Q1" H 3841 4154 50  0000 L CNN
+F 1 "TIP31C" H 3841 4245 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 3850 4300 50  0001 C CNN
+F 3 "~" H 3650 4200 50  0001 C CNN
+	1    3650 4200
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 6009A48D
+P 3150 3950
+F 0 "R4" H 3220 3996 50  0000 L CNN
+F 1 "1k" H 3220 3905 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3080 3950 50  0001 C CNN
+F 3 "~" H 3150 3950 50  0001 C CNN
+	1    3150 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 4100 3150 4200
+Wire Wire Line
+	3150 4600 3750 4600
+Wire Wire Line
+	3450 4200 3150 4200
+Connection ~ 3150 4200
+Wire Wire Line
+	3750 4400 3750 4600
+Wire Wire Line
+	4650 2550 4800 2550
+Connection ~ 4800 2550
+$Comp
+L Device:R R6
+U 1 1 600BEA2A
+P 5250 3000
+F 0 "R6" V 5043 3000 50  0000 C CNN
+F 1 "2.2k" V 5134 3000 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5180 3000 50  0001 C CNN
+F 3 "~" H 5250 3000 50  0001 C CNN
+	1    5250 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4800 2550 5300 2550
+$Comp
+L Device:R R1
+U 1 1 60064471
+P 5450 2550
+F 0 "R1" V 5243 2550 50  0000 C CNN
+F 1 "100k" V 5334 2550 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5380 2550 50  0001 C CNN
+F 3 "~" H 5450 2550 50  0001 C CNN
+	1    5450 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5600 2550 5750 2550
+Wire Wire Line
+	5750 2550 5750 2600
+Wire Wire Line
+	4800 3000 5100 3000
+Wire Wire Line
+	4800 2550 4800 3000
+$Comp
+L power:GNDREF #PWR0106
+U 1 1 600E3B6B
+P 5350 3100
+F 0 "#PWR0106" H 5350 2850 50  0001 C CNN
+F 1 "GNDREF" H 5355 2927 50  0000 C CNN
+F 2 "" H 5350 3100 50  0001 C CNN
+F 3 "" H 5350 3100 50  0001 C CNN
+	1    5350 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR0107
+U 1 1 600E69B2
+P 4200 4150
+F 0 "#PWR0107" H 4200 3900 50  0001 C CNN
+F 1 "GNDREF" H 4205 3977 50  0000 C CNN
+F 2 "" H 4200 4150 50  0001 C CNN
+F 3 "" H 4200 4150 50  0001 C CNN
+	1    4200 4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GNDREF #PWR0108
+U 1 1 600ED781
+P 3150 3800
+F 0 "#PWR0108" H 3150 3550 50  0001 C CNN
+F 1 "GNDREF" H 3155 3627 50  0000 C CNN
+F 2 "" H 3150 3800 50  0001 C CNN
+F 3 "" H 3150 3800 50  0001 C CNN
+	1    3150 3800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4300 4250 4300 4600
+Wire Wire Line
+	4300 4600 3750 4600
+Connection ~ 3750 4600
+Wire Wire Line
+	3150 4200 3150 4300
+$Comp
+L Device:R R5
+U 1 1 6009A9B5
+P 3150 4450
+F 0 "R5" H 3220 4496 50  0000 L CNN
+F 1 "1k" H 3220 4405 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3080 4450 50  0001 C CNN
+F 3 "~" H 3150 4450 50  0001 C CNN
+	1    3150 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 2350 5300 2350
+Wire Wire Line
+	5300 2350 5300 2100
+Wire Wire Line
+	6400 1900 6400 1750
+Wire Wire Line
+	6400 1750 6450 1750
+Text GLabel 3750 4000 1    50   Input ~ 0
++5V
+Text GLabel 3550 3350 0    50   Input ~ 0
++5V
+Text GLabel 6150 1650 0    50   Input ~ 0
+PWR
+Wire Wire Line
+	3550 3350 3750 3350
+$Comp
+L Device:R R7
+U 1 1 6009AF9C
+P 6300 1650
+F 0 "R7" V 6093 1650 50  0000 C CNN
+F 1 "10" V 6184 1650 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal" V 6230 1650 50  0001 C CNN
+F 3 "~" H 6300 1650 50  0001 C CNN
+	1    6300 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L arduino:spade-terminal PWR+1
+U 1 1 600B0454
+P 4400 4250
+F 0 "PWR+1" H 4478 4285 50  0000 L CNN
+F 1 "spade-terminal" H 4478 4209 30  0000 L CNN
+F 2 "arduino-nano:SpadeTerminal635" H 4250 4400 50  0001 C CNN
+F 3 "" H 4250 4400 50  0001 C CNN
+	1    4400 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L arduino:spade-terminal PWR-1
+U 1 1 600B13C9
+P 4400 4150
+F 0 "PWR-1" H 4478 4185 50  0000 L CNN
+F 1 "spade-terminal" H 4500 4250 30  0000 L CNN
+F 2 "arduino-nano:SpadeTerminal635" H 4250 4300 50  0001 C CNN
+F 3 "" H 4250 4300 50  0001 C CNN
+	1    4400 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L arduino:spade-terminal SIG-1
+U 1 1 600B1A54
+P 5500 3100
+F 0 "SIG-1" H 5578 3135 50  0000 L CNN
+F 1 "spade-terminal" H 5550 3000 30  0000 L CNN
+F 2 "arduino-nano:SpadeTerminal635" H 5350 3250 50  0001 C CNN
+F 3 "" H 5350 3250 50  0001 C CNN
+	1    5500 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L arduino:spade-terminal SIG+1
+U 1 1 600B3081
+P 5500 3000
+F 0 "SIG+1" H 5578 3035 50  0000 L CNN
+F 1 "spade-terminal" H 5600 3100 30  0000 L CNN
+F 2 "arduino-nano:SpadeTerminal635" H 5350 3150 50  0001 C CNN
+F 3 "" H 5350 3150 50  0001 C CNN
+	1    5500 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L arduino:spade-terminal OUT-1
+U 1 1 600B4492
+P 6550 1750
+F 0 "OUT-1" H 6628 1785 50  0000 L CNN
+F 1 "spade-terminal" H 6600 1650 30  0000 L CNN
+F 2 "arduino-nano:SpadeTerminal635" H 6400 1900 50  0001 C CNN
+F 3 "" H 6400 1900 50  0001 C CNN
+	1    6550 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L arduino:spade-terminal OUT+1
+U 1 1 600B4885
+P 6550 1650
+F 0 "OUT+1" H 6628 1685 50  0000 L CNN
+F 1 "spade-terminal" H 6600 1750 30  0000 L CNN
+F 2 "arduino-nano:SpadeTerminal635" H 6400 1800 50  0001 C CNN
+F 3 "" H 6400 1800 50  0001 C CNN
+	1    6550 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 4150 4200 4150
+Wire Wire Line
+	5400 3100 5350 3100
+Text Label 4050 4600 0    50   ~ 0
+PWR
+Text Label 6450 1650 0    50   ~ 0
+OUT+
+Text Label 6400 1850 0    50   ~ 0
+OUT-
+$EndSCHEMATC
