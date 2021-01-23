@@ -1,0 +1,11 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"REF**,REF**,REF**,REF**";"MountingHole_3.2mm_M3";4;"MountingHole_3.2mm_M3";;;
+2;"M1";"arduino-nano";1;"arduino-nano";;;
+3;"R7";"R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal";1;"10";;;
+4;"IR1";"PinHeader_1x03_P2.54mm_Vertical";1;"VS1838b";;;
+5;"R6,R2";"R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal";2;"2.2k";;;
+6;"R5,R4";"R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal";2;"1k";;;
+7;"R3";"R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal";1;"10k";;;
+8;"R1";"R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal";1;"100k";;;
+9;"Q2,Q1";"TO-220-3_Vertical";2;"TIP31C";;;
+10;"SIG-1,SIG+1,PWR-1,PWR+1,OUT-1,OUT+1";"SpadeTerminal635";6;"spade-terminal";;;
