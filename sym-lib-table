@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name speaker-switcher-remote-rescue)(type Legacy)(uri ${KIPRJMOD}/speaker-switcher-remote-rescue.lib)(options "")(descr ""))
+)
