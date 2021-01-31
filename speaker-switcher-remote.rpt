@@ -1,11 +1,11 @@
-## Footprint report - date Sun 31 Jan 2021 11:58:27 AM CST
+## Footprint report - date Sun 31 Jan 2021 12:06:16 PM CST
 ## Created by Pcbnew version kicad 5.1.5+dfsg1-2build2
 ## Unit = mm, Angle = deg.
 
 $BeginDESCRIPTION
 
 $BOARD
-upper_left_corner 99.960715 66.742500
+upper_left_corner 98.960715 66.742500
 lower_right_corner 197.539286 129.392500
 $EndBOARD
 
@@ -29,7 +29,7 @@ reference "REF**"
 value "MountingHole_3mm"
 footprint "MountingHole:MountingHole_3mm"
 attribut virtual
-position 107.250000 71.500000  orientation 0.00
+position 106.250000 71.500000  orientation 0.00
 layer front
 $PAD "1"
 Shape Circle Layer both
@@ -44,7 +44,7 @@ reference "REF**"
 value "MountingHole_3mm"
 footprint "MountingHole:MountingHole_3mm"
 attribut virtual
-position 107.250000 124.500000  orientation 0.00
+position 106.250000 124.500000  orientation 0.00
 layer front
 $PAD "1"
 Shape Circle Layer both
