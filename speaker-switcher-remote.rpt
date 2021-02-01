@@ -1,70 +1,70 @@
-## Footprint report - date Sun 31 Jan 2021 12:06:16 PM CST
+## Footprint report - date Mon 01 Feb 2021 08:48:07 AM CST
 ## Created by Pcbnew version kicad 5.1.5+dfsg1-2build2
 ## Unit = mm, Angle = deg.
 
 $BeginDESCRIPTION
 
 $BOARD
-upper_left_corner 98.960715 66.742500
-lower_right_corner 197.539286 129.392500
+upper_left_corner 95.817857 66.542500
+lower_right_corner 200.682143 130.592500
 $EndBOARD
 
 $MODULE "REF**"
 reference "REF**"
-value "MountingHole_3mm"
-footprint "MountingHole:MountingHole_3mm"
+value "MountingHole_3.2mm_M3"
+footprint "MountingHole:MountingHole_3.2mm_M3"
 attribut virtual
-position 190.250000 71.500000  orientation 0.00
+position 105.250000 125.500000  orientation 0.00
 layer front
 $PAD "1"
 Shape Circle Layer both
-position  0.000000  0.000000  size  3.000000  3.000000  orientation 0.00
-drill  3.000000
+position  0.000000  0.000000  size  3.200000  3.200000  orientation 0.00
+drill  3.200000
 shape_offset  0.000000  0.000000
 $EndPAD
 $EndMODULE  REF**
 
 $MODULE "REF**"
 reference "REF**"
-value "MountingHole_3mm"
-footprint "MountingHole:MountingHole_3mm"
+value "MountingHole_3.2mm_M3"
+footprint "MountingHole:MountingHole_3.2mm_M3"
 attribut virtual
-position 106.250000 71.500000  orientation 0.00
+position 191.250000 125.500000  orientation 0.00
 layer front
 $PAD "1"
 Shape Circle Layer both
-position  0.000000  0.000000  size  3.000000  3.000000  orientation 0.00
-drill  3.000000
+position  0.000000  0.000000  size  3.200000  3.200000  orientation 0.00
+drill  3.200000
 shape_offset  0.000000  0.000000
 $EndPAD
 $EndMODULE  REF**
 
 $MODULE "REF**"
 reference "REF**"
-value "MountingHole_3mm"
-footprint "MountingHole:MountingHole_3mm"
+value "MountingHole_3.2mm_M3"
+footprint "MountingHole:MountingHole_3.2mm_M3"
 attribut virtual
-position 106.250000 124.500000  orientation 0.00
+position 191.250000 71.500000  orientation 0.00
 layer front
 $PAD "1"
 Shape Circle Layer both
-position  0.000000  0.000000  size  3.000000  3.000000  orientation 0.00
-drill  3.000000
+position  0.000000  0.000000  size  3.200000  3.200000  orientation 0.00
+drill  3.200000
 shape_offset  0.000000  0.000000
 $EndPAD
 $EndMODULE  REF**
 
 $MODULE "REF**"
 reference "REF**"
-value "MountingHole_3mm"
-footprint "MountingHole:MountingHole_3mm"
+value "MountingHole_3.2mm_M3"
+footprint "MountingHole:MountingHole_3.2mm_M3"
 attribut virtual
-position 190.250000 124.500000  orientation 0.00
+position 105.250000 71.500000  orientation 0.00
 layer front
 $PAD "1"
 Shape Circle Layer both
-position  0.000000  0.000000  size  3.000000  3.000000  orientation 0.00
-drill  3.000000
+position  0.000000  0.000000  size  3.200000  3.200000  orientation 0.00
+drill  3.200000
 shape_offset  0.000000  0.000000
 $EndPAD
 $EndMODULE  REF**
@@ -113,10 +113,10 @@ $EndMODULE  R11
 
 $MODULE "R10"
 reference "R10"
-value "100"
+value "10k"
 footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 attribut none
-position 154.250000 112.500000  orientation 90.00
+position 147.250000 101.500000  orientation 0.00
 layer front
 $PAD "2"
 Shape Oval Layer both
@@ -236,27 +236,6 @@ drill  0.800000
 shape_offset  0.000000  0.000000
 $EndPAD
 $EndMODULE  R2
-
-$MODULE "R1"
-reference "R1"
-value "100k"
-footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
-attribut none
-position 145.250000 100.500000  orientation 0.00
-layer front
-$PAD "2"
-Shape Oval Layer both
-position  7.620000  0.000000  size  1.600000  1.600000  orientation 0.00
-drill  0.800000
-shape_offset  0.000000  0.000000
-$EndPAD
-$PAD "1"
-Shape Circle Layer both
-position  0.000000  0.000000  size  1.600000  1.600000  orientation 0.00
-drill  0.800000
-shape_offset  0.000000  0.000000
-$EndPAD
-$EndMODULE  R1
 
 $MODULE "U1"
 reference "U1"
@@ -380,23 +359,23 @@ reference "Q1"
 value "2N2222"
 footprint "Package_TO_SOT_THT:TO-92"
 attribut none
-position 158.250000 97.500000  orientation 0.00
+position 160.250000 96.500000  orientation 270.00
 layer front
 $PAD "1"
 Shape Rect Layer both
-position  0.000000  0.000000  size  1.300000  1.300000  orientation 90.00
+position  0.000000  0.000000  size  1.300000  1.300000  orientation -270.00
 drill  0.750000
 shape_offset  0.000000  0.000000
 $EndPAD
 $PAD "3"
 Shape Circle Layer both
-position  2.540000  0.000000  size  1.300000  1.300000  orientation 90.00
+position  2.540000  0.000000  size  1.300000  1.300000  orientation -270.00
 drill  0.750000
 shape_offset  0.000000  0.000000
 $EndPAD
 $PAD "2"
 Shape Circle Layer both
-position  1.270000 -1.270000  size  1.300000  1.300000  orientation 90.00
+position  1.270000 -1.270000  size  1.300000  1.300000  orientation -270.00
 drill  0.750000
 shape_offset  0.000000  0.000000
 $EndPAD
