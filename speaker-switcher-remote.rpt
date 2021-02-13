@@ -1,4 +1,4 @@
-## Footprint report - date Mon 01 Feb 2021 08:48:07 AM CST
+## Footprint report - date Sat 13 Feb 2021 04:31:23 PM CST
 ## Created by Pcbnew version kicad 5.1.5+dfsg1-2build2
 ## Unit = mm, Angle = deg.
 
@@ -8,6 +8,48 @@ $BOARD
 upper_left_corner 95.817857 66.542500
 lower_right_corner 200.682143 130.592500
 $EndBOARD
+
+$MODULE "R12"
+reference "R12"
+value "150"
+footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
+attribut none
+position 173.100000 100.500000  orientation 90.00
+layer front
+$PAD "2"
+Shape Oval Layer both
+position  7.620000  0.000000  size  1.600000  1.600000  orientation 0.00
+drill  0.800000
+shape_offset  0.000000  0.000000
+$EndPAD
+$PAD "1"
+Shape Circle Layer both
+position  0.000000  0.000000  size  1.600000  1.600000  orientation 0.00
+drill  0.800000
+shape_offset  0.000000  0.000000
+$EndPAD
+$EndMODULE  R12
+
+$MODULE "LED1"
+reference "LED1"
+value "LED"
+footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
+attribut none
+position 173.100000 78.660000  orientation 270.00
+layer front
+$PAD "2"
+Shape Oval Layer both
+position  2.500000  0.000000  size  1.700000  2.000000  orientation 0.00
+drill  1.000000
+shape_offset  0.000000  0.000000
+$EndPAD
+$PAD "1"
+Shape Roundrect Layer both
+position  0.000000  0.000000  size  1.700000  2.000000  orientation 0.00
+drill  1.000000
+shape_offset  0.000000  0.000000
+$EndPAD
+$EndMODULE  LED1
 
 $MODULE "REF**"
 reference "REF**"
@@ -363,13 +405,13 @@ position 160.250000 96.500000  orientation 270.00
 layer front
 $PAD "1"
 Shape Rect Layer both
-position  0.000000  0.000000  size  1.300000  1.300000  orientation -270.00
+position  0.000000  0.400000  size  1.300000  1.300000  orientation -270.00
 drill  0.750000
 shape_offset  0.000000  0.000000
 $EndPAD
 $PAD "3"
 Shape Circle Layer both
-position  2.540000  0.000000  size  1.300000  1.300000  orientation -270.00
+position  2.540000  0.200000  size  1.300000  1.300000  orientation -270.00
 drill  0.750000
 shape_offset  0.000000  0.000000
 $EndPAD
