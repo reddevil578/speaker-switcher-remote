@@ -95,6 +95,7 @@ const uint8_t irSelectTwoCmd = 24;
 const uint8_t pinIrIn = 12;     // From VS1838b
 const uint8_t pinSignalIn = 6;  // From 12V trigger output of audio source
 const uint8_t pinOut = 8;       // Driving 12V trigger output circuit
+const uint8_t pinRemoteOn = 9;  // Driving LED indicating in remote mode
 
 #define USE_SIGNAL 0
 #define USE_IR     1
@@ -112,8 +113,12 @@ unsigned long tStart;         // Start time of current interval
 
 void setup() {
   pinMode(pinIrIn, INPUT);
+  pinMode(pinSignalIn, INPUT_PULLUP);
   pinMode(pinOut, OUTPUT);
+  pinMode(pinRemoteOn, OUTPUT);
+
   digitalWrite(pinOut, state.outputState);
+  digitalWrite(pinRemoteOn, LOW);
 
 #ifdef USE_DISPLAY
   screen.begin();
@@ -181,9 +186,11 @@ void handle_command(IrCommand cmd) {
     // Not a command for this device
     return;
     
-  if (cmd.command == irSwitchCmd)
+  if (cmd.command == irSwitchCmd) {
     // Toggle between control by input signal or IR command
     state.switchState = !state.switchState;
+    digitalWrite(pinRemoteOn, state.switchState == USE_SIGNAL ? LOW : HIGH);
+  }
 
   else if (state.switchState == USE_IR)
     switch (cmd.command) {
@@ -227,7 +234,7 @@ void loop() {
 
   // If the input trigger is driving the output, set output state to match it
   if (state.switchState == USE_SIGNAL)
-    state.outputState = digitalRead(pinSignalIn);
+    state.outputState = !digitalRead(pinSignalIn);
 
   // If an IR command or the input trigger changes the desired output state
   // then commit it to the output pin.
